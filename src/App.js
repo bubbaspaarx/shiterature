@@ -8,6 +8,7 @@ import './App.css';
 
 import Home from './containers/home'
 import Welcome from './containers/welcome'
+import Shiterature from './containers/shiterature'
 
 const history = createHistory();  
 
@@ -23,7 +24,8 @@ class App extends Component {
       <Router history={history} >
         <Fragment>
           <Route exact path='/' render={() => <Home routing={this.routing} /> } />
-          <Route exact path='/welcome' component={Welcome} routing={this.routing}/>
+          <Route exact path='/welcome' render={() => <Welcome routing={this.routing} /> } />
+          <Route exact path='/shiterature' render={() => <Shiterature routing={this.routing} /> } />
         </Fragment>
       </Router>
       );

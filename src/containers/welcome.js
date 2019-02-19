@@ -31,10 +31,20 @@ export default class Welcome extends React.Component {
           </ul>
         </div>
         <div className="examples" style={examplesStyle}>
-          <div style={{...imgStyle, backgroundImage: "url('https://media.giphy.com/media/CrA66TnJqNFaU/giphy.gif')"}}></div>
-          <div style={{...imgStyle, backgroundImage: "url('https://media.giphy.com/media/fXgKfzV4aaHQI/giphy.gif')"}}></div>
-          <div style={{...imgStyle, backgroundImage: "url('https://media.giphy.com/media/xT77XHUkpCtKbmtuH6/giphy.gif')"}}></div>
+          <div>
+            <div style={{...imgStyle, backgroundImage: "url('https://media.giphy.com/media/CrA66TnJqNFaU/giphy.gif')"}}></div>
+            <p>"Cat under tap"</p>
+          </div>
+          <div>
+            <div style={{...imgStyle, backgroundImage: "url('https://media.giphy.com/media/fXgKfzV4aaHQI/giphy.gif')"}}></div>
+            <p>"Cat over Mountain"</p>
+          </div>
+          <div>
+            <div style={{...imgStyle, backgroundImage: "url('https://media.giphy.com/media/xT77XHUkpCtKbmtuH6/giphy.gif')"}}></div>
+            <p>"Cat licks the banana"</p>
+          </div>
         </div>
+        <button onClick={() => this.props.routing("shiterature")}>Let's Play!</button>
       </div>
       )
   }
