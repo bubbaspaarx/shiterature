@@ -1,19 +1,33 @@
-import React, { Component, Router } from 'react';
-import {
-  BrowserRouter as Router,
-  Route
-} from 'react-router-dom';
+import React, { Component, Fragment } from 'react';
+import { Router } from 'react-router';
+import { Route } from 'react-router-dom';
+import createHistory from 'history/createBrowserHistory';
+
 import logo from './rainbow-poo.svg';
 import './App.css';
 
+import Home from './containers/home'
+import Welcome from './containers/welcome'
+
+const history = createHistory();  
+
+
 class App extends Component {
+  
+  routing = (path) => {
+    history.push(path)
+  }
+
   render() {
     return (
-      <Router>
-        <p>Hello</p>
+      <Router history={history} >
+        <Fragment>
+          <Route exact path='/' render={() => <Home routing={this.routing} /> } />
+          <Route exact path='/welcome' component={Welcome} routing={this.routing}/>
+        </Fragment>
       </Router>
-    );
+      );
+    }
   }
-}
 
-export default App;
+  export default App;
